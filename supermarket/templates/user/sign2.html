@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="{% static 'css/pub.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/log.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/color.css' %}"/>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+<!--header-->
+<div class="zg-header cont clearfix">
+    <a href="#" target="_blank" class="zg-header-logo fl"><img src="images/u_logo.jpg" alt="小U商城"/></a>
+    <span class="zg-header-title fl">找回密码</span>
+</div>
+<!--header-->
+<div class="signUp_w">
+	<div class="signUp signUp_2">
+        <p>恭喜您注册成功！</p>
+    	<form>
+        	<input type="submit" value="进入" class="nextStep">
+        </form>
+    </div>
+</div>
+<!--footer-->
+<div class="zg-footer-box">
+    <p>Copyright © 2010-2016 小U商城 版权所有 保留一切权利</p>
+    <p>京ICP备10218183号 京ICP证161188号 京公网安备 11010802020593号 出版物经营许可证新出发京批字第直130052号</p>
+</div>
+<!--footer-->
+<script src="{% static 'js/pub.js' %}"></script>
+</body>
+</html>

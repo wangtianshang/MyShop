@@ -1,0 +1,135 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/pub.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+<body>
+
+<!-- 公共头部 -->
+<!--头部-->
+{% include 'goods/header.html' %}
+
+<!--头部 end -->
+
+<!--头部下方导航-->
+
+<div class="nav cont">
+    <div class="nav_r fr">
+    	<a href="#" target="_blank" alt="">首页</a>
+        {% for foo_nav in type_lis %}
+        <a href="{% url 'goods_list' %}?tid={{ foo_nav.id }}" target="_blank" alt="">{{ foo_nav.name }}</a>
+        {% endfor %}
+    </div>
+
+	<div class="nav_l fl">
+    	<h3>全部商品分类</h3>
+    	<ul class="nav_snav">
+            {% for foo_lis in type_lis %}
+            <li><a href="{% url 'goods_list' %}?tid={{ foo_lis.id }}" target="_blank" alt=""><i>></i>{{ foo_lis.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% for two_lis in all_data %}
+        <ul class="nav_snav_con">
+            {% for two_data in two_lis %}
+                <li>
+                    <h6><a href="#" target="_blank" alt="" class="hot">{{ two_data.name }}&nbsp;></a></h6>
+{#                在views里面第三层存在字典键为list里面#}
+                     <p>
+                         {% for three  in two_data.list %}
+                            <a href="#" target="_blank" alt="">{{ three.name }}</a>
+                         {% endfor %}
+                      </p>
+                </li>
+            {% endfor %}
+         </ul>
+    {% endfor %}
+
+    </div>
+</div>
+
+<!--头部下方导航   end  -->
+<!-- 公共头部  end -->
+
+
+<!--首页banner-->
+
+<div class="wrap banner_w">
+    <ul class="imgs">
+        <li style="background:#ffdb64;">
+            <a href="#" target="_blank" alt=""><img src="{% static 'images/zg_banner1.jpg' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+        <li style="background:rgb(239, 24, 81);">
+            <a href="#" target="_blank" alt=""><img src="{% static 'images/banner2.jpg' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+        <li style="background:rgb(74, 60, 126);;">
+            <a href="#" target="_blank" alt=""><img src="{% static 'images/banner3.png' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+    </ul>
+    <div class="dot">
+        <div class="dotshadow">&nbsp;</div>
+        <ul></ul>
+    </div>
+    <div class="banner_tab">
+        <a href="javascript:;" class="pre"><b>&nbsp;</b><i><</i></a>
+        <a href="javascript:;" class="next"><b>&nbsp;</b><i>></i></a>
+    </div>
+</div>
+<!--首页banner   end  -->
+{% for foo in list %}
+<div class="main main1 cont">
+    <div class="main_t clearfix">
+        <h2 class="fl"><a href="#" target="_blank" alt="">{{ foo.name }}</a></h2>
+{#        <ul class="fr">#}
+{#            <li><a href="#" target="_blank" alt="">国家公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">地方公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">乡镇公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">事业单位</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">医疗卫生系统</a></li>#}
+{#        </ul>#}
+    </div>
+    <div class="main_ml fl">
+        <a href="#" target="_blank" alt=""><img src="{{ foo.img_path }}" width="210" height="403" alt=""></a>
+{#        <ul>#}
+{#            <li><a href="#" target="_blank" alt="">北京公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">浙江公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">上海公务员</a></li>#}
+{#            <li><a href="#" target="_blank" alt="">天津公务员</a></li>#}
+{#        </ul>#}
+    </div>
+    <ul class="main_mr listI fr">
+        {% for floor_goods in foo.floor_goods_set.filter %}
+            <li>
+                <a href="{% url 'goods_showdetails' %}?gid={{ floor_goods.goods.id }}" target="_blank" alt=""><img src="{{ floor_goods.goods.goods_img_set.first.img_path }}"
+                                                            width="130" height="130" alt=""></a>
+                    <a href="#" target="_blank" alt="">{{ floor_goods.goods.name }}</a>
+                    <span class="price">￥{{ floor_goods.goods.price }}</span>
+            </li>
+        {% endfor %}
+
+
+    </ul>
+</div>
+{% endfor %}
+
+<div class="ind_ads">
+    <a href="#" target="_blank" alt=""><img src="{% static 'images/zg_idn_ads.jpg' %}" width="1200" height="120" alt=""></a>
+</div>
+
+
+
+<div class="ind_ads">
+    <a href="#" target="_blank" alt=""><img src="{% static  'images/zg_idn_ads.jpg' %}" width="1200" height="120" alt=""></a>
+</div>
+<!-- footer  -->
+{% include 'goods/footer.html' %}
+
+<script src="{% static  'js/index.js' %}"></script>
+</body>
+</html>

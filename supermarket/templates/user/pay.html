@@ -1,0 +1,126 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/pub.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/content.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}" />
+<script src="{%  static 'js/jquery.min.js' %}"></script>
+
+</head>
+
+<body>
+<!-- 公共头部 -->
+<!--头部-->
+<div class="header_w wrap">
+	<div class="header cont">
+    	<div class="fl">
+        	<font>欢迎来{{ request.session.user_name }}小U商城</font>
+            <a href="#" alt="">请登录</a><span></span>
+            <a href="#" alt="">免费注册</a>
+        </div>
+        <div class="fr header_r">
+        	<a href="#" alt="">我的订单</a><span></span>
+            <a href="#" alt="" class="moblieApp">移动APP</a><span></span>
+            <a href="#" alt="">网站地图</a><span></span>
+            <a href="#" alt="" class="paddingR0">退出</a>
+            <div class="mobileApp_QR">
+            	<img src="{% static 'images/mobileApp_QR.jpg' %}" width="140" height="141" >
+                <a href="#" class="iphone"><i></i>iphone下载</a>
+                <a href="#" class="android"><i></i>Android下载</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--头部 end -->
+
+<!--头部 end -->
+
+<div class="order_head_info cont clearfix">
+	<a href="#" alt="" class="fl"><img src="{% static 'images/u_logo.jpg' %}" width="210" height="42"></a><span class="header_title">结算页</span>
+	<div class="order_pro clearfix">
+    	<span class="pro_pre"><b>1</b>我的购物车</span>
+    	<span class="pro_pre"><b>2</b>提交结算</span>
+    	<span class="pro_active"><b>3</b>提交成功</span>
+    </div>
+</div>
+
+<!--付款-->
+<div class="order_step3 cont">
+	<div class="order3_h clearfix">
+    	<div class="order3_hl fl">
+        	<img class="fl" src="{% static 'images/good_s.jpg' %}" width="66" height="66" alt="">
+            <p class="order3_p1">订单提交成功，请您尽快付款！</p>
+            <p class="order3_p2">订单号：1234567890<br/>请在24小时内完成支付，否则订单会自动取消</p>
+        </div>
+        <p class="order3_hr fr">支付金额：<font class="price">￥5199.00</font></p>
+    </div>
+    <div class="order3_c">
+        <ul class="zgright-nav-ul fl order3_tabNav">
+            <li><a href="#" class="active">储蓄卡</a></li>
+            <li><a href="#">信用卡</a></li>
+            <li><a href="#">支付宝</a></li>
+            <li><a href="#">微信支付</a></li>
+        </ul>
+    	<div class="order3_tabC" style="display:block;">
+        	<ul class="clearfix">
+            	<li><img src="{% static 'images/order3_bank1.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank2.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank3.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank4.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank5.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank6.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank7.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank8.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank9.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank10.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank11.jpg' %}" width="226" height="56" alt=""></li>
+            	<li class="moreBank"><a href="#">更多银行</a></li>
+            </ul>
+        	<a href="javascript:void(0);" class="hover_btn2">立即支付</a>
+        </div>
+    	<div class="order3_tabC">
+        	<ul class="clearfix">
+            	<li><img src="{% static 'images/order3_bank7.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank8.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank9.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank10.jpg' %}" width="226" height="56" alt=""></li>
+            	<li><img src="{% static 'images/order3_bank11.jpg' %}" width="226" height="56" alt=""></li>
+            	<li class="moreBank"><a href="#">更多银行</a></li>
+            </ul>
+        	<a href="javascript:void(0);" class="hover_btn2">立即支付</a>
+        </div>
+    	<div class="order3_tabC">
+        	<ul class="clearfix">
+            	<li><img src="{% static 'images/order3_bank_zfb.jpg' %}" width="226" height="56" alt=""></li>
+            </ul>
+        	<a href="javascript:void(0);" class="hover_btn2">立即支付</a>
+        </div>
+    	<div class="order3_tabC order2_pay_wx clearfix">
+			<img src="{% static 'images/order3_wx_QR.jpg' %}" width="192" height="192" alt="">
+            <p><i class="order2_wx_icon">&nbsp;</i>请使用微信扫描<br/>二维码以完成支付</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- 支付提醒 -->
+<div class="pay_info_W fixed_shadow_w">
+	<div class="fixed_shadow pay_info_shadow"></div>
+	<div class="fixed_shadow_c pay_info">
+    	<p class="pay_info_t fixed_shadow_ct"><i class="fixed_close pay_info_close">&nbsp;</i>支付提示</p>
+    	<p class="pay_info_m fixed_shadow_cm">请您在新打开的网上银行收银台进行支付</p>
+        <p class="pay_info_b"><span class="pay_finished">已完成支付</span><a href="javascript:void(0);" class="changeMethod">选择其他方式</a></p>
+    </div>
+</div>
+
+<!-- footer  -->
+
+{% include 'goods/footer.html' %}
+<script src="{% static 'js/pub.js' %}"></script>
+<script src="{% static 'js/content.js' %}"></script>
+</body>
+</html>

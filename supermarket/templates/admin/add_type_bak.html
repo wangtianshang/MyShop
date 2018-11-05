@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>全球生鲜卖家管理后台</title>
+    <link rel="stylesheet" href="{% static 'admin/css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/xadmin.css' %}">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'admin/lib/layui/layui.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{%  static 'admin/js/xadmin.js' %}"></script>
+  </head>
+  
+  <body class="layui-anim layui-anim-up">
+    <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">分类管理</a>
+        <a href="{% url  'admin_addtype_list' %}">分类列表</a>
+      </span>
+    </div>
+    <div class="x-body">
+         <div class="layui-row">
+            <form class="layui-form layui-col-md12 x-so">
+              <input class="layui-input" placeholder="上级ID" name="parent_id" id="parent_id">
+              <input class="layui-input" placeholder="分类名称" name="name" id="name">
+
+              <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+            </form>
+         </div>
+      <table class="layui-table">
+        <thead>
+          <tr>
+		    <th>ID</th>
+            <th>分类名称</th>
+            <th>上级ID</th>
+            <th>添加时间</th>
+            <th>添加人</th>
+            <th>操作</th>
+			</tr>
+        </thead>
+
+        <tbody>
+        {% for foo in list %}
+              <tr>
+                <td>{{ foo.id }}</td>
+                <td>{{ foo.name }}</td>
+                <td>{{ foo.parent_id }}</td>
+                <td>{{ foo.add_time }}</td>
+                <td>{{ foo.add_user.name }}</td>
+                <td >
+                    <a href="{% url 'admin_edittype' %}?tid={{ foo.id }}"><i class="layui-icon">&#xe642;</i></a> <a href="#">删除</a>
+{#                    <a href="javascript:" onclick="x_admin_show('编辑','{% url "admin_edittype" %}?tid={{ info.id }}',600,400)" >#}
+{#                        <i class="layui-icon">&#xe642;</i>#}
+{#                    </a>#}
+                </td>
+              </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+{#    分页显示  和搜索   搜索显示分页#}
+      <div class="page">
+        <div>
+        {% if list.has_previous %}
+            <a class="prev" href="{% url 'admin_addtype_list' %}?p={{ list.previous_page_number }}&{{ page_url }}">&lt;&lt;</a>
+        {% endif %}
+            {% for page_num in list.paginator.page_range %}
+                {% if list.number == page_num %}
+                    <span class="current">{{ page_num }}</span>
+                    {% else %}
+                    <a class="num" href="{% url 'admin_addtype_list' %}?p={{ page_num }}&{{ page_url }}">{{ page_num }}</a>
+                {% endif %}
+            {% endfor %}
+        {% if list.has_next %}
+            <a class="next" href="{% url 'admin_addtype_list' %}?p={{ list.next_page_number }}&{{ page_url }}">&gt;&gt;</a>
+        {% endif %}
+
+
+
+        </div>
+      </div>
+
+    </div>
+   
+  </body>
+
+</html>

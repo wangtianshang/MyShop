@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+/** 登录 **/
+.zg-banner {
+    background: #ff6b6d;
+}
+.zg-banner-box {
+    position: relative;
+}
+.zg-banner-img img{display:block;}
+.zg-register {
+    width: 350px;
+    height: 380px;
+    background-color: #fff;
+    border-top: 3px solid #f36b11;
+    position: absolute;
+    right: 0;
+    top: 8%;
+	font:12px "宋体"; color:#666;
+    
+}
+.zg-register-top {padding: 0 0 0 35px;}
+.zg-register h3{font:18px/68px "Microsoft Yahei"; color:#333;}
+.zg-number {
+     width: 280px;
+     height: 36px;
+     margin-top: 25px
+ }
+
+.zg-txt {margin: 13px 34px 30px 3px;}
+.signIn_autoM{display:block; float:left; width:30%; position:relative; overflow:hidden; cursor:pointer;}
+.signIn_autoM input{position:absolute; left:0; top:0; display:block; width:100%; height:100%; opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.signIn_autoM i{float:left; display:block; width:14px; height:14px; margin-right:8px; background:url(../images/icon.png) no-repeat -25px -125px;}
+.signIn_autoM i.checked{background-position:-50px -125px;}
+.zg-promptly-register{padding:15px 36px 18px 30px; border-top: 1px solid #eee;}
+.zg-promptly-register a {display:block; float:left; margin-right:30px; line-height:16px;}
+.zg-promptly-register i{float:left; display:block; width:6px; height:6px; margin:4px 7px 0 0; background:url(../images/icon.png) no-repeat;}
+.zg-promptly-register .QQ i{background-position:-25px -50px;}
+.zg-promptly-register .wb i{background-position:-35px -50px;}
+.zg-promptly-register .wx i{background-position:-44px -50px;}
+.zg-promptly-register .txt {float:right; font:14px/16px "宋体"; margin:0; color: #f36b11;}
+.zg-register a:hover{color:#f36b11;}
+
+/*banner*/
+/** 登录 end **/
+
+
+
+
+/**** 找回密码 ****/
+.reset_w,.signUp_w{height:370px; padding:35px 0 40px; background:#f6f6f6;}
+.reset,.signUp{width:384px; height:356px; padding:0 183px; margin:0 auto; border-top:3px solid #f36b11; -moz-box-shadow: rgba(0,0,0,.2) 0 1px 5px 0; -webkit-box-shadow: rgba(0,0,0,.2) 0 1px 5px 0; box-shadow: rgba(0,0,0,.2) 0 1px 5px 0; background:#fff;}
+h1{font:20px/89px "Microsoft Yahei"; color:#333; text-align:center;}
+.ipt_mail_w,.ipt_code_w,.ipt_password_w{height:80px; margin-left:3px;}
+.ipt_mail_c,.ipt_password_c{width:376px; height:34px; border:1px solid #d9d9d9;}
+.ipt_mail_iw,.ipt_mail_i,.ipt_mail_w input{display:block; float:left;}
+.ipt_code,.ipt_mail,.ipt_password,.ipt_password_t{display:block; float:left; height:18px; padding:8px 0 8px 15px; color:#9e9e9e; font:14px/18px "宋体";}
+.ipt_mail_c b,.ipt_password_c b{width:34px; height:34px; border-right:1px solid #d9d9d9; background:#f6f6f6;}
+.active b{background:#fef9f6; border-color:#f36b11;}
+.ipt_mail_c i,.ipt_password_c i{display:block; width:16px; height:16px; margin:11px 0 0 9px; background:url(../images/icon.png) -25px -75px;}
+.ipt_password_c i{background-position:-25px -100px;}
+.ipt_mail_w .active i{background-position:-50px -75px;}
+.ipt_password_w .active i{background-position:-50px -100px;}
+.ipt_mail_c input,.ipt_password_c input{width:326px;}
+.error_info{/*display:none; */clear:both; color:#f36b11; font:12px/32px "宋体";}
+.ipt_code{width:190px; border:1px solid #d9d9d9; margin-right:17px;}
+.reset .active,.signUp .active,.zg-register .active{border-color:#f36b11}
+.ipt_code_c img{vertical-align:middle;}
+
+.nextStep{display:block; width:384px; height:40px; border-radius:3px; margin-top:10px; background:#f36b11; font:18px/40px "Microsoft Yahei"; color:#fff; text-align:center; cursor:pointer;}
+
+.reset_2 p{margin-top:24px; color:#9e9e9e; font:14px/54px "宋体"; text-align:center;}
+.reset_3 .verf_mail{display:block; width:358px; height:18px; padding:8px 0 8px 20px; border:1px solid #d9d9d9; margin:26px 0 30px 0; color:#9e9e9e;  font:14px/18px "宋体";}
+.reset_4 p{font:14px/44px "宋体"; color:#333;}
+.reset_4 div{height:50px;}
+.reset_4 div input{display:block; width:366px; height:18px; padding:8px 0 8px 10px; border:1px solid #d9d9d9; font:14px/18px "宋体"; color:#9e9e9e;}
+.reset_4 .reset_password{display:none;}
+.reset_4 .nextStep{margin-top:25px;}
+.reset_5 p{margin:35px 0 25px 0; color:#666; font:14px/24px "宋体"; text-align:center;}
+
+/*******  注册  ******/
+.signUp_w{height:490px; padding:35px 0 40px; background:#f6f6f6;}
+.signUp{height:490px;}
+.signUp p.login{margin-top:30px; text-align:center; font:12px/24px "宋体"; color:#333;}
+.signUp p.login a{color:#f36b11; margin-left:8px;}
+.signUp_2 p{margin-top:140px; font:24px/64px "Microsoft Yahei"; color:#333; text-align:center;}
+
+/** 登录 end **/
+.zg-register .ipt_mail_w,.zg-register .ipt_password_w,.zg-register .ipt_code_w{height:50px;}
+.zg-register .ipt_mail_c,.zg-register .ipt_password_c{width:278px;}
+.zg-register .ipt_mail,.zg-register .ipt_password,.zg-register .ipt_password_t{width:228px;}
+.ipt_password{display:none;}
+.zg-register .nextStep{width:286px;}
+
+
+

@@ -1,0 +1,186 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/pub.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/content.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+<body>
+
+<!-- 公共头部 -->
+<!--头部-->
+{% include 'goods/header.html' %}
+
+<!--头部 end -->
+
+<!--头部下方导航-->
+
+
+<div class="nav_w wrap">                                                                                                    
+    <div class="nav cont">
+        <div class="nav_r fr">
+            <a href="#" target="_blank" alt="">首页</a>
+            {% for foo_nav in type_lis %}
+                <a href="#" target="_blank" alt="">{{ foo_nav.name }}</a>
+            {% endfor %}
+        </div>
+        <div class="nav_l fl">
+            <h3>全部商品分类<i class="hide">&nbsp;</i></h3>
+            <ul class="nav_snav hide">
+               {% for foo_lis in type_lis %}
+                    <li><a href="#" target="_blank" alt=""><i>></i>{{ foo_lis.name }}</a></li>
+                {% endfor %}
+            </ul>
+            {% for two_lis in all_data %}
+                <ul class="nav_snav_con">
+                    {% for two_data in two_lis %}
+                        <li>
+                            <h6><a href="#" target="_blank" alt="" class="hot">{{ two_data.name }}&nbsp;></a></h6>
+        {#                在views里面第三层存在字典键为list里面#}
+                             <p>
+                                 {% for three  in two_data.list %}
+                                    <a href="#" target="_blank" alt="">{{ three.name }}</a>
+                                 {% endfor %}
+                              </p>
+                        </li>
+                    {% endfor %}
+                 </ul>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+<!--头部下方导航   end  -->
+<!-- 公共头部  end -->
+<!--  content start-->
+<div class="l_select cont clearfix">
+	<p class="site"><a href="#" alt="">首页</a>&nbsp;>&nbsp;
+        {% for foo_nav in type_lis %}
+{#                <a href="#" target="_blank" alt="">{{ foo_nav.name }}</a>#}
+            {% if foo_nav.id == ttid %}
+                <a href="#" alt="">{{ foo_nav.name }}</a>&nbsp;>&nbsp;
+            {% endif %}
+{#            {% if forloop.counter == 1 %}#}
+{#                <a href="#" alt="">{{ foo_nav.name }}</a>&nbsp;>&nbsp;#}
+{#            {% endif %}#}
+        {% endfor %}
+    </p>
+	<div>
+            {% for two_data in two_datas %}
+                <dl>
+                <dt><a href="#" alt=""><i>></i>{{ two_data.name }}</a></dt>
+                <dd>
+                    {% for three  in two_data.list %}
+                        <span><a href="#" alt="">{{ three.name }}</a></span>
+                    {% endfor %}
+                </dd>
+                <dd class="more"><span>更多</span></dd>
+                </dl>
+            {% endfor %}
+
+    </div>
+
+</div>
+
+<div class="l_content cont clearfix">
+<!--商品推荐-->
+	<div class="sptj fl">
+        <h4><a href="#" alt="">商品推荐</a></h4>
+        <ul class="listI fl">
+            <li>
+                <a href="#" alt=""><img src="" width="130" height="130" alt=""></a>
+                <a href="#" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+                <span class="price">￥4999.00</span>
+            </li>
+            <li>
+                <a href="#" alt=""><img src="" width="130" height="130" alt=""></a>
+                <a href="#" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+                <span class="price">￥4999.00</span>
+            </li>
+            <li>
+                <a href="#" alt=""><img src="" width="130" height="130" alt=""></a>
+                <a href="#" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+                <span class="price">￥4999.00</span>
+            </li>
+            <li>
+                <a href="#" alt=""><img src="" width="130" height="130" alt=""></a>
+                <a href="#" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+                <span class="price">￥4999.00</span>
+            </li>
+            <li>
+                <a href="#" alt=""><img src="" width="130" height="130" alt=""></a>
+                <a href="#" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+                <span class="price">￥4999.00</span>
+            </li>
+
+        </ul>
+	</div>
+    <!--商品推荐 end -->
+
+	<div class="l_list fr">
+    	<div class="l_list_t clearfix">
+        	<div class="l_lt_l fl">
+            	<span>综合排序<i class="down">&nbsp;</i></span>
+            	<span class="border0">人气<i class="up">&nbsp;</i></span>
+            	<span>价格<i class="up">&nbsp;</i></span>
+            </div>
+        	<div class="l_lt_r fr">
+            	<b>共614件商品</b>
+                <b><font>1</font>/11</b>
+                <span><</span>
+                <span class="border0 active">></span>
+            </div>
+        </div>
+        <ul class="listL">
+            {% for foo in goods_data %}
+
+                <li>
+                    <a href="{% url 'goods_showdetails' %}?gid={{ foo.id }}" alt=""><img src="{{ foo.goods_img_set.first.img_path }}" width="195" height="200" >
+                    </a>
+
+                    <span class="price">{{ foo.price }}</span>
+                    <a href="#" alt="">{{ foo.name }}<font class="colorB11">不要停止你的嘴，不要辜负</font></a>
+                    <a href="#" alt="" class="comment">已有<b>3.2万+</b>人评价</a>
+                    <div class="listL_b"><a  href="#" class="gwc_ad"><i>&nbsp;</i>加入购物车</a><a href="#" class="collect">喜欢</a></div>
+                </li>
+
+
+            {% endfor %}
+
+
+
+        </ul>
+        <!-- pages -->
+    	<div class="pages">
+            {% if goods_data.has_previous %}
+                <a class="pages_pre" href="?{{ page_url }}&p={{ goods_data.previous_page_number }}" title="上一页">上一页</a>
+            {% endif %}
+
+            {% for page_num in goods_data.paginator.page_range %}
+                {% if goods_data.number == page_num %}
+                    <a href="?{{ page_url }}&p={{ page_num }}" class="active">{{ page_num }}</a>
+                {% else %}
+                    <a href="?{{ page_url }}&p={{ page_num }}">{{ page_num }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if goods_data.has_next %}
+                <a href="?{{ page_url }}&p={{ goods_data.next_page_number }}" class="pages_next" title="下一页">下一页</a>
+            {% endif %}
+
+            <span>共{{ goods_data.number }}页</span>
+        </div>
+    </div>
+</div>
+<!-- footer  -->
+{% include 'goods/footer.html' %}
+<script src="{% static 'js/pub.js' %}"></script>
+<script src="{% static 'js/content.js' %}"></script>
+</body>
+</html>

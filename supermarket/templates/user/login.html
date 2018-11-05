@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小U商城</title>
+    <link rel="stylesheet" href="{% static 'css/pub.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/log.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/color.css' %}"/>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+<body>
+<!--header-->
+<div class="zg-header cont clearfix">
+    <a href="#" target="_blank" class="zg-header-logo fl"><img src="{% static 'images/u_logo.jpg' %}" alt="小U商城"/></a>
+    <span class="zg-header-title fl">欢迎登陆</span>
+</div>
+<!--header-->
+<!--banner-->
+<div class="zg-banner">
+    <div class="zg-banner-box cont">
+        <div class="zg-banner-img">
+            <img src="images/login_baner1.jpg" alt="" width="800" height="81"/>
+            <img src="images/login_baner2.jpg" alt="" width="800" height="85"/>
+            <img src="images/login_baner3.jpg" alt="" width="800" height="121"/>
+            <img src="images/login_baner4.jpg" alt="" width="800" height="163"/>
+        </div>
+        <div class="zg-register">
+            <div class="zg-register-top">
+                <h3>登录</h3>
+                <form action="{% url 'dologin' %}" method="post">
+                    {% csrf_token %}
+                    <div class="ipt_mail_w">
+                        <div class="ipt_mail_c clearfix">
+                            <b class="ipt_mail_iw"><i class="ipt_mail_i"></i></b>
+                            <input name="username" id="username" type="text" value="请输入账号" class="ipt_mail">
+                        </div>
+
+                    </div>
+                    <div class="ipt_password_w">
+                        <div class="ipt_password_c clearfix">
+                            <b class="ipt_mail_iw"><i class="ipt_password_i"></i></b>
+                            <input type="text"  value="密码" class="ipt_password_t password_t">
+                            <input type="password" name="password" id="password" value="" class="ipt_password ipt_password">
+                        </div>
+                    </div>
+                    <div class="ipt_code_w">
+                        <div class="ipt_code_c">
+                            <input type="text" name="code" id="code" value="验证码" class="ipt_code">
+                            <img style="cursor: pointer" src="{% url 'verify_code' %}" id="code_img" width="69" height="38" onclick="change(this)">
+                        </div>
+                    </div>
+                    <input type="submit" value="注册" class="nextStep">
+                </form>
+                <div class="zg-txt clearfix">
+                    <label class="signIn_autoM"><i class="checked"></i>自动登录<input type="checkbox" id="order3_all"></label>
+                    <a href="#" class="forget fr">忘记密码？</a>
+                </div>
+            </div>
+            <div class="zg-promptly-register clearfix">
+                <a href="#" target="_blank" class="QQ"><i>&nbsp;</i>QQ</a>
+                <a href="#" target="_blank" class="wb"><i>&nbsp;</i>微博</a>
+                <a href="#" target="_blank" class="wx"><i>&nbsp;</i>微信</a>
+                <a href="#" target="_blank" class="txt">立即注册</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--banner-->
+
+<!--footer-->
+<div class="zg-footer-box">
+    <p>Copyright © 2010-2016 小U商城 版权所有 保留一切权利</p>
+    <p>京ICP备10218183号 京ICP证161188号 京公网安备 11010802020593号 出版物经营许可证新出发京批字第直130052号</p>
+</div>
+<!--footer-->
+<script src="{% static 'js/pub.js' %}"></script>
+<script src="{% static 'js/content.js' %}"></script>
+<script>
+    function change(t) {
+       {#        方法一#}
+{#         var timestamp = new Date().getTime()#}
+{#         $('#code_img').attr('src', "{% url 'verify_code' %}?"+timestamp)#}
+{#        方法二#}
+        t.src+="?"
+        $('#code').val('验证码')
+    }
+</script>
+</body>
+</html>

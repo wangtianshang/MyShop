@@ -1,0 +1,20 @@
+
+    <div class="header_nogoods gwc_list">
+        <i>&nbsp;</i>你的购物车中还没有商品，赶紧选购吧
+    </div>
+    <div class="header_goods gwc_list">
+        <h6>最新加入的商品</h6>
+        <ul>
+            {% for foo in car_list %}
+                <li>
+                   <p class="gwc_r fr">
+                       <span class="gwc_price">￥{{ foo.goods.price }}</span><font class="gwc_amount">×{{ foo.number }}</font><br/>
+                       <a href="#" class="gwc_delete">删除</a>
+                   </p>
+                   <img src="{{ foo.goods.goods_img_set.first.img_path }}" width="49" height="49">
+                   <a class="goodsname" href="#">{{ foo.goods.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+        <div class="gwc_total">共<b>{{ number }}</b>件商品   共计<b>￥10000.00</b><a href="{% url 'showcarlist' %}" class="fr">去结算</a></div>
+    </div>

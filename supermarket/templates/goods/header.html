@@ -1,0 +1,60 @@
+{% load static %}
+<div class="header_w wrap">
+	<div class="header cont">
+    	<div class="fl">
+        	<font>欢迎{{ request.session.user_name }}来小U商城</font>
+            {% if request.session.user_name %}
+                <a href="" alt=""></a><span></span>
+                {% else %}
+                <a href="{% url 'login' %}" alt="">请登录</a><span></span>
+            {% endif %}
+
+            <a href="{% url 'sign' %}" alt="">免费注册</a>
+        </div>
+        <div class="fr header_r">
+        	<a href="#" alt="">我的订单</a><span></span>
+            <a href="#" alt="" class="moblieApp">移动APP</a><span></span>
+            <a href="#" alt="">网站地图</a><span></span>
+            <a href="{% url 'exit' %}" alt="" class="paddingR0">退出</a>
+            <div class="mobileApp_QR">
+            	<img src="{% static 'images/mobileApp_QR.jpg' %}" width="140" height="141" >
+                <a href="#" class="iphone"><i></i>iphone下载</a>
+                <a href="#" class="android"><i></i>Android下载</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header_b cont">
+	<a href="#" alt="" class="fl"><img src="{% static 'images/u_logo.jpg' %}" width="210" height="42"></a>
+    <div class="header_search fl">
+    	<form method="get" action="{% url 'goods_list' %}">
+            {% csrf_token %}
+        	<input type="text" name="name" value="" class="header_text fl">
+        	<input type="submit"  value="搜索" class="header_sub fr">
+        </form>
+    </div>
+    <!-- header-购物车  -->
+    <div class="header_gwc fr" id="car_list">
+        <a href="{% url 'showcarlist' %}" target="_blank" alt="" class="header_gwc_h">
+            <i class="icon_gwc">&nbsp;</i>购物车
+            <i id="count" class="i_num">{{ num }}</i>
+            <b class="bgfff">&nbsp;</b>
+        </a>
+    </div>
+    <!-- header-购物车 end  -->
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+                url: '{% url 'goods_carlist' %}', // 访问地址
+                type: 'get', // get
+                data: {}, // json
+                dataType: 'html',  // text json html 返回的数据类型
+                success: function (data) {
+                    {#console.log(data)#}
+                    $('#car_list').append(data)
+                }
+            })
+    })
+</script>

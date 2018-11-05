@@ -1,0 +1,977 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/pub.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+</head>
+
+<body>
+
+<!-- 公共头部 -->
+<!--头部-->
+<div class="header_w wrap">
+	<div class="header cont">
+    	<div class="fl">
+        	<font>欢迎来小U商城</font>
+            <a href="#" target="_blank" alt="">请登录</a><span></span>
+            <a href="#" target="_blank" alt="">免费注册</a>
+        </div>
+        <div class="fr header_r">
+        	<a href="#" target="_blank" alt="">我的订单</a><span></span>
+            <a href="#" target="_blank" alt="" class="moblieApp">移动APP</a><span></span>
+            <a href="#" target="_blank" alt="">网站地图</a><span></span>
+            <a href="#" target="_blank" alt="" class="paddingR0">退出</a>
+            <div class="mobileApp_QR">
+            	<img src="images/mobileApp_QR.jpg" width="140" height="141" >
+                <a href="#" target="_blank" class="iphone"><i></i>iphone下载</a>
+                <a href="#" target="_blank" class="android"><i></i>Android下载</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--头部 end -->
+
+<!--头部下方导航-->
+
+<div class="header_b cont">
+	<a href="#" target="_blank" alt="" class="fl"><img src="{% static 'images/u_logo.jpg' %}" width="210" height="42"></a>
+    <div class="header_search fl">
+    	<form>
+        	<input type="text" value="空气净化器" class="header_text fl" onBlur="if(value==''){value='空气净化器'}" onFocus="if(value=='空气净化器')value='';">
+        	<input type="submit" value="搜索" class="header_sub fr">
+        </form>
+    </div>
+    <!-- header-购物车  -->
+    <div class="header_gwc fr">
+        <a href="#" target="_blank" alt="" class="header_gwc_h"><i class="icon_gwc">&nbsp;</i>购物车<i class="i_num">10</i><b class="bgfff">&nbsp;</b></a>
+        <div class="header_nogoods gwc_list">
+            <i>&nbsp;</i>你的购物车中还没有商品，赶紧选购吧
+        </div>
+        <div class="header_goods gwc_list">
+        	<h6>最新加入的商品</h6>
+        	<ul>
+            	<li>
+                    <p class="gwc_r fr">
+                        <span class="gwc_price">￥0</span><font class="gwc_amount">×2</font><br/>
+                    	<a href="#" class="gwc_delete">删除</a>
+                    </p>
+                	<img src="" width="49" height="49">
+                	<a href="#">碧然德（BRITA）过滤净水器 家用滤水壶 净水壶cdcdcd</a>
+                </li>
+            	<li>
+                    <p class="gwc_r fr">
+                        <span class="gwc_price">￥0</span><font class="gwc_amount">×2</font><br/>
+                    	<a href="#" class="gwc_delete">删除</a>
+                    </p>
+                	<img src="" width="49" height="49">
+                	<a href="#">碧然德（BRITA）过滤净水器 家用滤水壶 净水壶cdcdcd</a>
+                </li>
+            	<li>
+                    <p class="gwc_r fr">
+                        <span class="gwc_price">￥4999.00</span><font class="gwc_amount">×2</font><br/>
+                    	<a href="#" class="gwc_delete">删除</a>
+                    </p>
+                	<img src="" width="49" height="49">
+                	<a href="#">碧然德（BRITA）过滤净水器 家用滤水壶 净水壶cdcdcd</a>
+                </li>
+            	<li>
+                    <p class="gwc_r fr">
+                        <span class="gwc_price">￥0</span><font class="gwc_amount">×2</font><br/>
+                    	<a href="#" class="gwc_delete">删除</a>
+                    </p>
+                	<img src="" width="49" height="49">
+                	<a href="#">碧然德（BRITA）过滤净水器 家用滤水壶 净水壶cdcdcd</a>
+                </li>
+            </ul>
+            <div class="gwc_total">共<b>3</b>件商品   共计<b>￥10000.00</b><a href="#" class="fr">去结算</a></div>
+        </div>
+    </div>
+    <!-- header-购物车 end  -->
+</div>
+<div class="nav cont">
+    <div class="nav_r fr">
+    	<a href="#" target="_blank" alt="">首页</a>
+        <a href="#" target="_blank" alt="">服装城</a>
+        <a href="#" target="_blank" alt="">美妆馆</a>
+        <a href="#" target="_blank" alt="">生鲜</a>
+    	<a href="#" target="_blank" alt="">全球购</a>
+        <a href="#" target="_blank" alt="">闪购</a>
+        <a href="#" target="_blank" alt="">团购</a>
+        <a href="#" target="_blank" alt="">拍卖</a>
+        <a href="#" target="_blank" alt="">金融</a>
+        <a href="#" target="_blank" alt="">超市</a>
+        <a href="#" target="_blank" alt="" class="margin0">特卖街</a>
+    </div>
+	<div class="nav_l fl">
+    	<h3>全部商品分类</h3>
+    	<ul class="nav_snav">
+        	<li><a href="#" target="_blank" alt=""><i>></i>家用电器</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>手机、运营商、数码</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>电脑、办公</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>家居、家具、厨具</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>男装、女装、内衣</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>个护化妆、清洁、宠物</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>鞋靴、箱包、奢侈品</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>运动、户外、钟表</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>汽车、汽车用品</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>母婴、玩具乐器</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>食品、酒类、特产</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>医药保健</a></li>
+        	<li><a href="#" target="_blank" alt=""><i>></i>图书、音像、电子书</a></li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行22222&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行22222&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+        <ul class="nav_snav_con">
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">当季流行22222&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">精选上装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                </p>
+            </li>
+        	<li>
+            	<h6><a href="#" target="_blank" alt="">女士下装&nbsp;></a></h6>
+                <p>
+                	<a href="#" target="_blank" alt="" class="hot">秋季新品</a>
+                    <a href="#" target="_blank" alt="">金秋连衣裙</a>
+                    <a href="#" target="_blank" alt="">女装商场同款</a>
+                    <a href="#" target="_blank" alt="">印花衬衫</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">早秋休闲裤</a>
+                    <a href="#" target="_blank" alt="">风衣</a>
+                    <a href="#" target="_blank" alt="" class="hot">气质套装</a>
+                    <a href="#" target="_blank" alt="">内衣</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--头部下方导航   end  -->
+<!-- 公共头部  end -->
+
+
+<!--首页banner-->
+
+<div class="wrap banner_w">
+    <ul class="imgs">
+        <li style="background:#ffdb64;">
+            <a href="#" target="_blank" alt=""><img src="{%  static 'images/zg_banner1.jpg' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+        <li style="background:rgb(239, 24, 81);">
+            <a href="#" target="_blank" alt=""><img src="{% static 'images/banner2.jpg' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+        <li style="background:rgb(74, 60, 126);;">
+            <a href="#" target="_blank" alt=""><img src="{% static 'images/banner3.png' %}" width="990" height="450" title="" alt=""></a>
+        </li>
+    </ul>
+    <div class="dot">
+        <div class="dotshadow">&nbsp;</div>
+        <ul></ul>
+    </div>
+    <div class="banner_tab">
+        <a href="javascript:;" class="pre"><b>&nbsp;</b><i><</i></a>
+        <a href="javascript:;" class="next"><b>&nbsp;</b><i>></i></a>
+    </div>
+</div>
+<!--首页banner   end  -->
+<div class="main main1 cont">
+    <div class="main_t clearfix">
+        <h2 class="fl"><a href="#" target="_blank" alt="">公务员考试</a></h2>
+        <ul class="fr">
+            <li><a href="#" target="_blank" alt="">国家公务员</a></li>
+            <li><a href="#" target="_blank" alt="">地方公务员</a></li>
+            <li><a href="#" target="_blank" alt="">乡镇公务员</a></li>
+            <li><a href="#" target="_blank" alt="">事业单位</a></li>
+            <li><a href="#" target="_blank" alt="">医疗卫生系统</a></li>
+        </ul>
+    </div>
+    <div class="main_ml fl">
+        <a href="#" target="_blank" alt=""><img src="images/zg_ind_m1.jpg" width="210" height="403" alt=""></a>
+        <ul>
+            <li><a href="#" target="_blank" alt="">北京公务员</a></li>
+            <li><a href="#" target="_blank" alt="">浙江公务员</a></li>
+            <li><a href="#" target="_blank" alt="">上海公务员</a></li>
+            <li><a href="#" target="_blank" alt="">天津公务员</a></li>
+        </ul>
+    </div>
+    <ul class="main_mr listI fr">
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+    </ul>
+</div>
+<div class="main main2 cont">
+    <div class="main_t clearfix">
+        <h2 class="fl"><a href="#" target="_blank" alt="">公务员考试</a></h2>
+        <ul class="fr">
+            <li><a href="#" target="_blank" alt="">国家公务员</a></li>
+            <li><a href="#" target="_blank" alt="">地方公务员</a></li>
+            <li><a href="#" target="_blank" alt="">乡镇公务员</a></li>
+            <li><a href="#" target="_blank" alt="">事业单位</a></li>
+            <li><a href="#" target="_blank" alt="">医疗卫生系统</a></li>
+        </ul>
+    </div>
+    <div class="main_ml fl">
+        <a href="#" target="_blank" alt=""><img src="images/zg_ind_m2.jpg" width="210" height="403" alt=""></a>
+        <ul>
+            <li><a href="#" target="_blank" alt="">北京公务员</a></li>
+            <li><a href="#" target="_blank" alt="">浙江公务员</a></li>
+            <li><a href="#" target="_blank" alt="">上海公务员</a></li>
+            <li><a href="#" target="_blank" alt="">天津公务员</a></li>
+        </ul>
+    </div>
+    <ul class="main_mr listI fr">
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+    </ul>
+</div>
+<div class="ind_ads">
+    <a href="#" target="_blank" alt=""><img src="images/zg_idn_ads.jpg" width="1200" height="120" alt=""></a>
+</div>
+
+<div class="main main3 cont">
+    <div class="main_t clearfix">
+        <h2 class="fl"><a href="#" target="_blank" alt="">公务员考试</a></h2>
+        <ul class="fr">
+            <li><a href="#" target="_blank" alt="">国家公务员</a></li>
+            <li><a href="#" target="_blank" alt="">地方公务员</a></li>
+            <li><a href="#" target="_blank" alt="">乡镇公务员</a></li>
+            <li><a href="#" target="_blank" alt="">事业单位</a></li>
+            <li><a href="#" target="_blank" alt="">医疗卫生系统</a></li>
+        </ul>
+    </div>
+    <div class="main_ml fl">
+        <a href="#" target="_blank" alt=""><img src="images/zg_ind_m3.jpg" width="210" height="403" alt=""></a>
+        <ul>
+            <li><a href="#" target="_blank" alt="">北京公务员</a></li>
+            <li><a href="#" target="_blank" alt="">浙江公务员</a></li>
+            <li><a href="#" target="_blank" alt="">上海公务员</a></li>
+            <li><a href="#" target="_blank" alt="">天津公务员</a></li>
+        </ul>
+    </div>
+    <ul class="main_mr listI fr">
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+    </ul>
+</div>
+<div class="main main4 cont">
+    <div class="main_t clearfix">
+        <h2 class="fl"><a href="#" target="_blank" alt="">公务员考试</a></h2>
+        <ul class="fr">
+            <li><a href="#" target="_blank" alt="">国家公务员</a></li>
+            <li><a href="#" target="_blank" alt="">地方公务员</a></li>
+            <li><a href="#" target="_blank" alt="">乡镇公务员</a></li>
+            <li><a href="#" target="_blank" alt="">事业单位</a></li>
+            <li><a href="#" target="_blank" alt="">医疗卫生系统</a></li>
+        </ul>
+    </div>
+    <div class="main_ml fl">
+        <a href="#" target="_blank" alt=""><img src="images/zg_ind_m4.jpg" width="210" height="403" alt=""></a>
+        <ul>
+            <li><a href="#" target="_blank" alt="">北京公务员</a></li>
+            <li><a href="#" target="_blank" alt="">浙江公务员</a></li>
+            <li><a href="#" target="_blank" alt="">上海公务员</a></li>
+            <li><a href="#" target="_blank" alt="">天津公务员</a></li>
+        </ul>
+    </div>
+    <ul class="main_mr listI fr">
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+        <li>
+            <a href="#" target="_blank" alt=""><img src="" width="130" height="130" alt=""></a>
+            <a href="#" target="_blank" alt="">海信（Hisense)<br/>LED55EC760UC 55英寸曲面</a>
+            <span class="price">￥4999.00</span>
+        </li>
+    </ul>
+</div>
+
+<div class="ind_ads">
+    <a href="#" target="_blank" alt=""><img src="images/zg_idn_ads.jpg" width="1200" height="120" alt=""></a>
+</div>
+<!-- footer  -->
+<div class="footer_w wrap">
+	<div class="footer cont clearfix">
+    	<dl>
+        	<dt><a href="#" target="_blank" alt="">购物指南</a></dt>
+            <dd><a href="#" target="_blank" alt="">购物流程</a></dd>
+            <dd><a href="#" target="_blank" alt="">支付方式</a></dd>
+            <dd><a href="#" target="_blank" alt="">配送方式</a></dd>
+        </dl>
+    	<dl>
+        	<dt><a href="#" target="_blank" alt="">售后服务</a></dt>
+            <dd><a href="#" target="_blank" alt="">售后政策</a></dd>
+            <dd><a href="#" target="_blank" alt="">价格保护</a></dd>
+            <dd><a href="#" target="_blank" alt="">退款说明</a></dd>
+            <dd><a href="#" target="_blank" alt="">返修/退换货</a></dd>
+            <dd><a href="#" target="_blank" alt="">取消订</a></dd>
+        </dl>
+    	<dl>
+        	<dt><a href="#" target="_blank" alt="">配送方式</a></dt>
+            <dd><a href="#" target="_blank" alt="">上门自提</a></dd>
+            <dd><a href="#" target="_blank" alt="">211限时达</a></dd>
+            <dd><a href="#" target="_blank" alt="">配送服务查询</a></dd>
+            <dd><a href="#" target="_blank" alt="">配送费收取标准</a></dd>
+            <dd><a href="#" target="_blank" alt="">海外配送</a></dd>
+        </dl>
+    	<dl>
+        	<dt><a href="#" target="_blank" alt="">支付方式 </a></dt>
+            <dd><a href="#" target="_blank" alt="">网上支付</a></dd>
+            <dd><a href="#" target="_blank" alt="">支付宝支付</a></dd>
+            <dd><a href="#" target="_blank" alt="">邮局汇款</a></dd>
+        </dl>
+    	<dl>
+        	<dt><a href="#" target="_blank" alt="">用户帮助</a></dt>
+            <dd><a href="#" target="_blank" alt="">免费注册</a></dd>
+            <dd><a href="#" target="_blank" alt="">找回密码</a></dd>
+            <dd><a href="#" target="_blank" alt="">常见问题</a></dd>
+            <dd><a href="#" target="_blank" alt="">优惠券使用</a></dd>
+        </dl>
+    </div>
+</div>
+<p class="copyright">Copyright © 2010-2016 小U商城 版权所有 保留一切权利<br/>京ICP备10218183号 京ICP证161188号 京公网安备 11010802020593号 出版物经营许可证新出发京批字第直130052号</p>
+
+<script src="{% static 'js/index.js' %}"></script>
+</body>
+</html>

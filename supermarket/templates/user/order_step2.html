@@ -1,0 +1,184 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="{% static 'css/pub.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/content.css' %}" />
+<link type="text/css" rel="stylesheet" href="{% static 'css/color.css' %}" />
+<script src="{% static 'js/jquery.min.js' %}"></script>
+
+</head>
+
+<body>
+<!-- 公共头部 -->
+<!--头部-->
+<div class="header_w wrap">
+	<div class="header cont">
+    	<div class="fl">
+        	<font>欢迎来小U商城</font>
+            <a href="#" alt="">请登录</a><span></span>
+            <a href="#" alt="">免费注册</a>
+        </div>
+        <div class="fr header_r">
+        	<a href="#" alt="">我的订单</a><span></span>
+            <a href="#" alt="" class="moblieApp">移动APP</a><span></span>
+            <a href="#" alt="">网站地图</a><span></span>
+            <a href="#" alt="" class="paddingR0">退出</a>
+            <div class="mobileApp_QR">
+            	<img src="{% static 'images/mobileApp_QR.jpg' %}" width="140" height="141" >
+                <a href="#" class="iphone"><i></i>iphone下载</a>
+                <a href="#" class="android"><i></i>Android下载</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--头部 end -->
+
+<!--头部 end -->
+
+<div class="order_head_info cont clearfix">
+	<a href="#" alt="" class="fl"><img src="{% static 'images/u_logo.jpg' %}" width="210" height="42"></a><span class="header_title">结算页</span>
+	<div class="order_pro clearfix">
+    	<span class="pro_pre"><b>1</b>我的购物车</span>
+        <span class="pro_active"><b>2</b>提交结算</span>
+        <span class="pro_next"><b>3</b>提交成功</span>
+    </div>
+</div>
+
+<form action="{% url 'pay' %}" method="post" id="pay_form">
+<!--  订单确认页面 -->
+<div class="U_ddxx cont">
+	<div class="U_ddbt">填写并核对订单信息</div>
+    <div class="U_ddb">
+
+        <div class="U_spqd">
+        	<h4>商品清单</h4>
+            <table width="1125">
+              <tr>
+                <th width="40%">商品</td>
+                <th width="20%">单价</td>
+                <th width="20%">购买数量</td>
+                <th width="20%">小计</td>
+              </tr>
+                {% for datum in data %}
+                    <tr>
+                        <td>
+                            <div class="list_goods">
+                                <a href="#"><img src="{{ datum.goods.goods_img_set.first.img_path }}" width="66" height="66"></a>
+                                <p class="list_goods_name"><a href="#">{{ datum.goods.name }}</a></p>
+                                <p class="list_goods_details"></p>
+                            </div>
+                        </td>
+                        <td>￥{{ datum.goods.price }}</td>
+                        <td>{{ datum.number }}</td>
+                        <td><font class="colorB11">{% widthratio datum.goods.price 1 datum.number %}</font></td>
+                    </tr>
+                    <input type="hidden" name="car_id" value="{{ datum.id }}">
+                {% endfor %}
+
+            </table>
+        </div>
+        <div class="order2_b clearfix">
+        	<p>商品总金额：<span>￥{{ total }}</span></p>
+            <p><b>应付总金额：</b><font class="totalPrice">￥{{ total }}</font></p>
+            <a href="javascript:" class="hover_btn2" onclick="sub()">提交订单</a>
+        </div>
+    </div>
+
+</div>
+{% csrf_token %}
+</form>
+<div class="fixed_shadow_w">
+	<div class="fixed_shadow"></div>
+	<div class="cancel_address fixed_shadow_c">
+    	<p class="fixed_shadow_ct"><i class="fixed_close pay_info_close">&nbsp;</i>删除收货人信息</p>
+    	<p class="cancel_address_m fixed_shadow_cm"><i>&nbsp;</i>您确定要删除该收货地址吗？</p>
+        <p class="cancel_address_b fixed_shadow_cb">
+        	<label class="fixed_iptW"><input type="submit" value="确定" class="fixed_ipt"></label>
+            <label class="fixed_iptW"><input type="submit" value="取消" class="fixed_ipt"></label>
+        </p>
+    </div>
+	<div class="operateSucc fixed_shadow_c">
+    	<p class="fixed_shadow_ct"><i class="fixed_close pay_info_close">&nbsp;</i>提示</p>
+    	<p class="operateSucc_m fixed_shadow_cm">操作成功！</p>
+        <p class="operateSucc_b fixed_shadow_cb">
+        	<label class="fixed_iptW"><input type="submit" value="确定" class="fixed_ipt"></label>
+        </p>
+    </div>
+	<div class="addAddress fixed_shadow_c">
+    	<p class="fixed_shadow_ct"><i class="fixed_close pay_info_close">&nbsp;</i>新增收货地址</p>
+    	<div class="addAddress_m fixed_shadow_cm">
+        	<table>
+            	<tr>
+                	<th><span class="redStar">*</span> 收货人：</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                	<th><span class="redStar">*</span> 地址：</th>
+                    <td>
+                    	<div class="model_select model_select1" id="js_modelSelect">
+                            <div class="select_c">
+                            	<div class="select_cs"></div>
+                                <ul class="select_so">
+                                	<li value="1" onclick="getcontent(this)">1</li>
+                                	<li>2</li>
+                                	<li>3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    	<div class="model_select model_select2">
+                            <div class="select_c">
+                            	<div class="select_cs"></div>
+                                <ul class="select_so">
+                                	<li value="1" onclick="getcontent(this)">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    	<div class="model_select model_select3">
+                            <div class="select_c">
+                            	<div class="select_cs"></div>
+                                <ul class="select_so">
+                                	<li value="1" onclick="getcontent(this)">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                	<th><span class="redStar">*</span> 详细地址：</th>
+                    <td><textarea></textarea></td>
+                </tr>
+                <tr>
+                	<th><span class="redStar">*</span> 手机：</th>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                	<th>邮编：</th>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+        </div>
+        <p class="addAddress_b fixed_shadow_cb">
+        	<label class="fixed_iptW"><input type="submit" value="确定" class="fixed_ipt"></label>
+        </p>
+    </div>
+</div>
+<!-- footer  -->
+{% include 'goods/footer.html' %}
+<script src="{% static 'js/pub.js' %}"></script>
+<script src="{% static 'js/content.js' %}"></script>
+<script>
+    function sub() {
+        $('#pay_form').submit()
+    }
+</script>
+</body>
+</html>

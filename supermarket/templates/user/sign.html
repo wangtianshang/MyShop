@@ -1,0 +1,190 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" href="{% static 'css/pub.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/log.css' %}"/>
+<link rel="stylesheet" href="{% static 'css/color.css' %}"/>
+<script src="{% static 'js/jquery.min.js'%}"></script>
+</head>
+<body>
+<!--header-->
+<div class="zg-header cont clearfix">
+    <a href="#" target="_blank" class="zg-header-logo fl"><img src="images/u_logo.jpg" alt="小U商城"/></a>
+    <span class="zg-header-title fl">欢迎注册</span>
+</div>
+<!--header-->
+<div class="signUp_w">
+	<div class="signUp">
+    	<h1>注册帐号</h1>
+    	<form action="{% url 'reg' %}" method="post">
+            {% csrf_token %}
+        	<div class="ipt_mail_w">
+                <div class="ipt_mail_c clearfix">
+                    <b class="ipt_mail_iw"><i class="ipt_mail_i"></i></b>
+                    <input type="text" value="请输入账号" name="username" id="username" class="ipt_mail" onblur="checkuser()">
+                </div>
+                <p class="error_info" id="error_name"></p>
+            </div>
+        	<div class="ipt_password_w">
+                <div class="ipt_password_c clearfix">
+                    <b class="ipt_mail_iw"><i class="ipt_password_i"></i></b>
+                    <input type="text" value="密码"  class="ipt_password_t password_t">
+                    <input type="password" value="" name="password" id="password" onblur="subpassword()" class="ipt_password ipt_password">
+                </div>
+                <p class="error_info" id="password_tishi"></p>
+            </div>
+            <div class="ipt_password_w">
+                <div class="ipt_password_c clearfix">
+                    <b class="ipt_mail_iw"><i class="ipt_password_i"></i></b>
+                    <input type="text" value="确认密码" class="ipt_password_t password_t">
+                    <input type="password" value="" id="password1" onblur="compassword()" class="ipt_password ipt_password">
+                </div>
+                <p class="error_info" id="password_com"></p>
+            </div>
+        	<div class="ipt_code_w">
+                <div class="ipt_code_c">
+                    <input type="text" id="code" value="验证码" onblur="check_code()"  class="ipt_code">
+                    <img style="cursor: pointer" src="{% url 'verify_code' %}" id="code_img" width="69" height="38" onclick="change(this)">
+                </div>
+                <p class="error_info" id="code_info" ></p>
+            </div>
+
+        	<input id="sub" type="submit" value="注册"  class="nextStep" disabled="true">
+
+        </form>
+    	<p  class="login">已有帐号<a href="#">去登录</a></p>
+
+    </div>
+
+</div>
+<!--footer-->
+<div class="zg-footer-box">
+    <p>Copyright © 2010-2016 小U商城 版权所有 保留一切权利</p>
+    <p>京ICP备10218183号 京ICP证161188号 京公网安备 11010802020593号 出版物经营许可证新出发京批字第直130052号</p>
+</div>
+<!--footer-->
+<script src="{% static 'js/pub.js' %}"></script>
+<script>
+    function checkuser() {
+{#        alert('kkkkk')#}
+        var uname = $('#username').val();
+        var torken = $('input[name=csrfmiddlewaretoken]').val();
+        if (uname.length < 6 || uname.length > 20){
+            $('#error_name').html('用户名长度在6-20位之间');
+            $('#sub').attr('disabled',true)
+            return
+        }else{
+            $('#sub').attr('disabled',false)
+        }
+        $.ajax({
+            url:'{% url 'checkuser' %}',
+            type:'POST',
+            data:{username:uname,csrfmiddlewaretoken:torken},
+            dataType:'json',
+
+            success:function (data) {
+                 $('#error_name').html(data.msg);
+               if (data.status == 0) {
+{#                   false 和true 是要小写的#}
+                    $('#sub').attr('disabled', false)
+                } else {
+                    $('#sub').attr('disabled', true)
+                }
+            }
+        })
+    }
+
+{#    检查字符#}
+    function check_code() {
+{#        alert('llllll')#}
+        var code = $('#code').val()
+        var torken = $('input[name=csrfmiddlewaretoken]').val();
+
+        if(code.length < 5){
+{#            if(code.length = 0){#}
+{#                $('#code_info').html('请输入验证码')#}
+{#                $('#sub').attr('disabled', true)#}
+{#                return#}
+{#            }#}
+            $('#code_info').html('请输入五位验证码')
+            $('#sub').attr('disabled', true)
+            return
+        }else{
+            $('#sub').attr('disabled', false)
+        }
+        $.ajax({
+            url:'{% url 'check_code' %}',
+            type:'POST',
+            data:{code:code,csrfmiddlewaretoken:torken},
+            dataType:'json',
+            success:function (data) {
+                 $('#code_info').html(data.msg);
+{#                 等于1 说明相同#}
+               if (data.status == 1) {
+                    $('#sub').attr('disabled', false)
+                } else {
+                    $('#sub').attr('disabled', true)
+                }
+            }
+        })
+
+    }
+{#    更换验证码#}
+    function change(t) {
+       {#        方法一#}
+{#         var timestamp = new Date().getTime()#}
+{#         $('#code_img').attr('src', "{% url 'verify_code' %}?"+timestamp)#}
+{#        方法二#}
+        t.src+="?"
+        $('#code').val('')
+        $('#code_info').html('');
+    }
+
+{#输入密码#}
+    function subpassword() {
+        var password = $('#password').val()
+        var torken = $('input[name=csrfmiddlewaretoken]').val();
+        if (password.length < 6 || password.length > 20) {
+            $('#password_tishi').html('请输入密码/密码格式为6-20位字母数组组合')
+        }
+         $.ajax({
+            url:'{% url 'subpassword' %}',
+            type:'POST',
+            data:{password:password,csrfmiddlewaretoken:torken},
+            dataType:'json',
+            success:function (data) {
+                 $('#password_tishi').html(data.msg);
+{#                 等于1 说明相同#}
+               if (data.status == 1) {
+                    $('#sub').attr('disabled', false)
+                } else {
+                    $('#sub').attr('disabled', true)
+                }
+            }
+        })
+    }
+
+{#    确认密码#}
+    function compassword() {
+        var password = $('#password').val()
+        var password1 = $('#password1').val()
+        console.log(password1)
+        console.log(password)
+        if(password == password1) {
+            $('#password_com').html('密码一致');
+            $('#sub').attr('disabled', false)
+        }else {
+            $('#password_com').html('输入密码不一致');
+            $('#sub').attr('disabled', true)
+        }
+
+    }
+{#    可以建立一个方法用来判断，用来判断注册是否可用，只要有值为空 则提示，全部合格才可以点击注册#}
+
+</script>
+
+</body>
+</html>

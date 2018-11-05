@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>全球生鲜卖家管理后台页面</title>
+{#   导入后台静态资源#}
+    <link rel="stylesheet" href="{% static 'admin/css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/xadmin.css' %}">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'admin/lib/layui/layui.js' %}" charset="utf-8"></script>
+    <script type="text/javascript" src="{% static 'admin/js/xadmin.js' %}"></script>
+{#      导入ztree静态资源#}
+    <link rel="stylesheet" href="{% static 'admin/css/demo.css' %}">
+	<link rel="stylesheet" href="{% static 'admin/css/zTreeStyle/zTreeStyle.css' %}" type="text/css">
+	<script type="text/javascript" src="{% static 'admin/js/jquery-1.4.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'admin/js/jquery.ztree.core.js' %}"></script>
+  </head>
+
+  <body>
+    <div class="x-body layui-anim layui-anim-up">
+        <form class="layui-form" method="post" action="{% url 'admin_doaddfloorgoods' %}" ENCTYPE="multipart/form-data">
+            {% csrf_token %}
+          <div class="layui-form-item">
+              <label for="L_email" class="layui-form-label">
+                  <span class="x-red">*</span>楼层名称
+              </label>
+              <div class="layui-input-inline">
+                  <select name="floor_id" >
+                        <option value="0">请选择</option>
+                        {% for floor in floor_lis %}
+                            <option value="{{ floor.id }}">{{ floor.name }}</option>
+                        {% endfor %}
+                  </select>
+              </div>
+          </div>
+
+          <div class="layui-form-item">
+            <label for="L_username" class="layui-form-label">
+                商品名称
+            </label>
+            <div class="layui-input-inline">
+{#               <select name="goods_id" >#}
+{#                        <option value="0">请选择</option>#}
+                        {% for goods in goods_lis %}
+{#                            <option value="{{ goods.id }}">{{ goods.name }}</option>#}
+                            <input name="goods_id" type="checkbox" value="{{ goods.id }}">{{ goods.name }}
+                        {% endfor %}
+
+{#                  </select>#}
+            </div>
+        </div>
+         <div class="layui-form-item">
+            <label for="L_username" class="layui-form-label">
+                排序
+            </label>
+            <div class="layui-input-inline">
+              <input type="text" id="L_email" name="sort" required=""
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+
+
+          <div class="layui-form-item">
+              <label for="L_repass" class="layui-form-label">
+              </label>
+              <button  class="layui-btn" lay-filter="add" lay-submit="">
+                  增加
+              </button>
+          </div>
+      </form>
+    </div>
+  </body>
+
+</html>

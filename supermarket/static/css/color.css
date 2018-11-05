@@ -1,0 +1,73 @@
+@charset "utf-8";
+a:hover{color:#f36b11;}
+.colorChange{color:#f36b11;}
+
+.header a:hover{color:#f36b11;}
+.header_search{border-color:#f36b11;}
+
+.header_sub{background:#f36b11;}
+
+.nav_w{border-color:#f36b11;}
+.nav_r a:hover{color:#f36b11;}
+
+
+.nav_l h3{background:#e74904;}
+
+.nav_snav,.nav_snav li{background:#f36b11;}
+.nav_snav li.active a{background:#ff893b;}
+.nav_snav_con{border-top:2px solid #f2711c;}
+
+.nav_snav_con a:hover,.nav_snav_con a.hot{color:#f36b11;}
+
+
+/*index*/
+.main_t li a:hover{color:#f36b11;}
+
+.sptj{border-top-color:#fe8e44}
+.sptj h4 a{color:#f36b11;}
+.main_ml li a:hover{color:#f36b11;}
+.main_t h2 a:hover{color:#f36b11;}
+
+/** 列表页**/
+.l_select .site .current{color:#f36b11; border-color:#f5853a;}
+.pages a.active,.pages a:hover{border-color:#f36b11; color:#f36b11;}
+.listL li.active{border-color:#f36b11;}
+/**  商品详情 **/
+.s_m2_rt_h li.active{border-top-color:#ff8f45;}
+.colorChange{color:#f36b11;}
+.s_d_nav a.active{color:#f36b11;}
+.s_d_nav a i{background:url(../images/icon.png) no-repeat -24px -174px;}
+.s_d_nav a.active i{background-position:-25px -150px;}
+
+/* 商品列表 */
+.U_spqd th{border-bottom:2px solid #f36b11; }
+.U_spqd td{background:#fef9f6; }
+
+/* 个人中心 */
+.user_menu{border-top-color:#ff8f45;}
+.user_menu .colorChange{color:#f36b11;}
+.user_menu a:hover{color:#f36b11;}
+.user_title{color:#f36b11;}
+.user_menu dd.active a{color:#f36b11;}
+
+.order_details_nopaid{border-color:#f3dcce;}
+.order_details_nopaid .order_title{ background-color:#fef9f6;}
+.add_addr{background:#fef9f6; border-color:#f36b11; color:#f36b11;}
+.add_addr:hover{ color:#f36b11;}
+.user_5 .list_goods_name a:hover{color:#f36b11;}
+
+/*登录页面*/
+.zg-promptly-register a.wx:hover,.zg-promptly-register a.QQ:hover,.zg-promptly-register a.wb:hover{color:#f36b11;}
+
+/* 找回密码 */
+.reset,.signUp{border-top-color:#f36b11; }
+
+/*购物车*/
+.list_goods_name a:hover{color:#f36b11;}
+.order1_c dd.active{background:#fef9f6;}
+/*结算页*/
+.zgright-nav-ul a:hover,.zgright-nav-ul a.active{background-color:#fef9f6; border-color:#f36b11; color:#f36b11;}
+.U_ddbt{ border-bottom-color:#f36b11; color:#f36b11;}
+.order2_yhq h4 span{color:#f36b11;}
+
+.order2_yhq_tabN .active{color:#f36b11;}
